@@ -11,9 +11,15 @@ because they are restored with Codex itself.
 
 ## Layout
 
-Each directory at the repository root is one restore-ready Codex skill. The
+Most directories at the repository root are restore-ready Codex skills. The
 original directory structure is preserved, including each skill's `SKILL.md`,
 references, scripts, templates, and assets.
+
+`auto-claude-code-research-in-sleep/` is a vendored ARIS repository rather
+than a single skill. Its Codex-native skills live under
+`auto-claude-code-research-in-sleep/skills/skills-codex/`; keeping the complete
+repository also preserves the helper tools, templates, MCP servers, and update
+scripts those skills use.
 
 Repository documentation is stored under `docs/` and is not a Codex skill.
 
@@ -27,6 +33,12 @@ Clone the repository and copy the required skill directories into:
 
 Do not copy `docs`, `.git`, `.gitignore`, or `README.md` into the skills
 directory. Restart Codex after restoring skills.
+
+For ARIS, install or link each directory under
+`auto-claude-code-research-in-sleep/skills/skills-codex/` into
+`%USERPROFILE%\.codex\skills`. Set `%USERPROFILE%\.aris\repo` to the absolute
+path of `auto-claude-code-research-in-sleep` so ARIS skills can resolve their
+shared helper tools.
 
 ## Update
 
